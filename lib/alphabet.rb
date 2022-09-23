@@ -1,5 +1,6 @@
 class Alphabet
-  
+  attr_reader :alphabet 
+
   def alphabet
     {
       "a" => "0.....",
