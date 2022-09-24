@@ -35,6 +35,5 @@ class Alphabet
   
   def to_braille(string)
     @braille[string]
-    # require 'pry'; binding.pry
   end
 end
