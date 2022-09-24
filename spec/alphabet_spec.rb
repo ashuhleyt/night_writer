@@ -10,11 +10,11 @@ RSpec.describe Alphabet do
     expect(@alphabet).to be_instance_of(Alphabet)
   end
 
-  it 'contains letters of the alphabet converted to a string' do 
-    expect(@alphabet.to_braille("a")).to eq(["0.", "..", ".."])
-    expect(@alphabet.to_braille("o")).to eq(["0.", ".0", "0."])
-    expect(@alphabet.to_braille("i")).to eq([".0", "0.", ".."])
-    expect(@alphabet.to_braille("w")).to eq([".0", "00", ".0"])
-    expect(@alphabet.to_braille(" ")).to eq(["..", "..", ".."])
+  it 'can populate the braille string' do 
+    expect(@alphabet.write("a")).to eq(["0.", "..", ".."])
+    expect(@alphabet.write("o")).to eq(["0.", ".0", "0."])
+    expect(@alphabet.write("i")).to eq([".0", "0.", ".."])
+    expect(@alphabet.write("w")).to eq([".0", "00", ".0"])
+    expect(@alphabet.write(" ")).to eq(["..", "..", ".."])
   end
 end

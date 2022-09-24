@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-09-23T17:11:08-07:00">2022-09-23T17:11:08-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-09-24T10:52:46-07:00">2022-09-24T10:52:46-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.83
+         16.1
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>6</b> relevant lines,
-    <span class="green"><b>6</b> lines covered</span> and
+    <b>10</b> relevant lines,
+    <span class="green"><b>10</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -73,11 +73,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#4a086570a5435d06147083812fcf130e5ed047aa" class="src_link" title="lib/alphabet.rb">lib/alphabet.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">40</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">6</td>
+            <td class="cell--number">45</td>
+            <td class="cell--number">10</td>
+            <td class="cell--number">10</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.83</td>
+            <td class="cell--number">16.10</td>
             
           </tr>
         
@@ -112,8 +112,8 @@
     
 
     <div class="t-line-summary">
-      <b>6</b> relevant lines.
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>10</b> relevant lines.
+      <span class="green"><b>10</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -516,7 +516,7 @@
 
             
 
-            <code class="ruby">  def to_braille(string)</code>
+            <code class="ruby">  def write(letter) </code>
           </li>
         </div>
       
@@ -527,23 +527,78 @@
 
             
 
-            <code class="ruby">    @braille[string]</code>
+            <code class="ruby">    characters = []</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="38">
+          <li class="covered" data-hits="5" data-linenumber="38">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">    @braille.each do |char, braille|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="135" data-linenumber="39">
+            <span class="hits">135</span>
+            
+
+            
+
+            <code class="ruby">      if letter == char</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="40">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">        characters = braille</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="41">
             
             
 
             
 
-            <code class="ruby">    # require &#39;pry&#39;; binding.pry</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="39">
+          <li class="never" data-hits="" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="43">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">    characters </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="44">
             
             
 
@@ -554,7 +609,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="40">
+          <li class="never" data-hits="" data-linenumber="45">
             
             
 

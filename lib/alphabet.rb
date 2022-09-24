@@ -33,7 +33,13 @@ class Alphabet
     }
   end
   
-  def to_braille(string)
-    @braille[string]
+  def write(letter) 
+    characters = []
+    @braille.each do |char, braille|
+      if letter == char
+        characters = braille
+      end
+    end
+    characters 
   end
 end
