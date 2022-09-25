@@ -29,11 +29,46 @@ class Alphabet
     "x" => ["00", "..", "00"],
     "y" => ["00", ".0", "00"],
     "z" => ["0.", ".0", "00"],
-    " " => ["..", "..", ".."]
+    " " => ["..", "..", ".."] 
     }
   end
   
   def to_braille(string)
-    @braille[string]
+    letters = string.chars
+    changed_letters = []
+    letters.each do |letter| #array of letters
+      changed_letters << @braille[letter]
+    end
+    changed_letters.flatten #returns transformed english letters to braille
+  
+    row1 = []
+    row2 = []
+    row3 = []
+
+    changed_letters.each do |letter|
+      row1 << changed_letters[0][0]
+      row2 << changed_letters[0][1]
+      row3 << changed_letters[0][2]
+    end
+    # require 'pry'; binding.pry
+     [row1.join, row2.join, row3.join]
   end
-end
+
+  def convert_string_to_braille(message)
+    final_message = ""
+    braille_letters = []
+    message_chars = message.downcase.chars
+    message_chars.each do |char|
+      braille_letters << self.to_braille(char)
+    end
+    for i in 0..2 do 
+      braille_letters.each do |letter|
+        final_message.concat(letter[i])
+        print letter[i]
+      end
+      final_message.concat("\n")
+      puts "\n"
+    end
+    final_message
+  end
+end 
