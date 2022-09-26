@@ -1,8 +1,7 @@
-require 'rspec'
+require 'spec_helper'
+require './lib/library'
 require './lib/night_writer'
 
 RSpec.describe NightWriter do 
-  before(:each) do 
-    
-  end
+  it 
 end
