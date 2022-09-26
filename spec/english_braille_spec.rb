@@ -10,8 +10,4 @@ RSpec.describe EnglishBraille do
   it 'exists' do 
     expect(@EnglishBraille).to be_instance_of(EnglishBraille)
   end
-
-  it 'can convert english to braille' do 
-    expect(@EnglishBraille.alphabet).to eq()
-  end
 end

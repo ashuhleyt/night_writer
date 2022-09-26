@@ -1,4 +1,4 @@
-class Alphabet
+class Library
   attr_reader :braille
   
   def initialize
@@ -32,14 +32,14 @@ class Alphabet
     " " => ["..", "..", ".."] 
     }
   end
-  
+
   def to_braille(string)
     letters = string.chars
     changed_letters = []
-    letters.each do |letter| #array of letters
+    letters.each do |letter| 
       changed_letters << @braille[letter]
     end
-    changed_letters.flatten #returns transformed english letters to braille
+    changed_letters.flatten 
   
     row1 = []
     row2 = []
@@ -50,7 +50,6 @@ class Alphabet
       row2 << changed_letters[0][1]
       row3 << changed_letters[0][2]
     end
-    # require 'pry'; binding.pry
      [row1.join, row2.join, row3.join]
   end
 
@@ -64,11 +63,21 @@ class Alphabet
     for i in 0..2 do 
       braille_letters.each do |letter|
         final_message.concat(letter[i])
-        print letter[i]
+        # print letter[i]
       end
       final_message.concat("\n")
-      puts "\n"
+      # puts "\n"
     end
     final_message
+  end
+
+  def read_file_character_count(string)
+    # character_count = 0
+    
+    # message_chars = string.downcase.chars
+    # message_chars.each do |char|
+    #   braille_letters << self.to_braille(string)
+    end
+    # character_count += 1 #for each character, i want to add 1 to character count. 
   end
 end 
