@@ -21,6 +21,7 @@ class BrailleEnglish
   end
 
   def braille_characters(repeat, split_message)
+    repeat = split_message.length / 3
     collector = [] 
     x = 0
     y = 2

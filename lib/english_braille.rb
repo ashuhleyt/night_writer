@@ -7,10 +7,6 @@ class EnglishBraille
     braille_letters = []
     counter = 0
     new_counter = -1
-    message_chars = message.downcase.chars #own method?
-    message_chars.each do |char|
-      braille_letters << @braille[char] #convert to braille
-    end
     #counter
     loop do 
       collector[counter] = braille_letters.shift(40)
@@ -27,11 +23,17 @@ class EnglishBraille
       end
     end
       final_message
+      convert_to_braille(message)
   end
 
-  # def message
-  #   message.downcase.chars
-  # end
+  def convert_to_braille(message) 
+    braille_letters = []
+    message_chars = message.downcase.chars 
+    message_chars.each do |char|
+      braille_letters << @braille[char] 
+    end
+    braille_letters
+  end
 end
 
 

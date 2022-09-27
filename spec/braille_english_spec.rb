@@ -17,4 +17,8 @@ RSpec.describe BrailleEnglish do
   it 'can split characters at 3 lines' do 
     expect(@BrailleEnglish.split_character(".00.0..00000\n00..000..000\n0.000...0...")).to eq([[".0", "00", "0."], ["0.", "..", "00"], ["0.", "00", "0."], [".0", "0.", ".."], ["00", ".0", "0."], ["00", "00", ".."]])
   end
+
+  it 'can return english letters appropriately' do 
+    expect(@BrailleEnglish.braille_characters(repeat)).to eq("a")
+  end
 end
