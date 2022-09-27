@@ -12,6 +12,13 @@ RSpec.describe EnglishBraille do
   it 'converts message to braille characters' do 
     expect(@EnglishBraille.mastermind("a")).to eq("0.\n..\n..\n")
     expect(@EnglishBraille.mastermind("ashley")).to eq("0..00.0.0.00\n..0.000..0.0\n..0...0...00\n")
+    expect(@EnglishBraille.mastermind("t")).to eq(".0\n00\n0.\n")
+    expect(@EnglishBraille.mastermind("u")).to eq("0.\n..\n00\n")
+    expect(@EnglishBraille.mastermind("r")).to eq("0.\n00\n0.\n")
+    expect(@EnglishBraille.mastermind("i")).to eq(".0\n0.\n..\n")
+    expect(@EnglishBraille.mastermind("n")).to eq("00\n.0\n0.\n")
+    expect(@EnglishBraille.mastermind("g")).to eq("00\n00\n..\n")
+    expect(@EnglishBraille.mastermind("turing")).to eq(".00.0..00000\n00..000..000\n0.000...0...\n")
   end
 
   it 'converts to individual braille characters' do 
