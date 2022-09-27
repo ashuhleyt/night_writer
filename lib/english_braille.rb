@@ -18,10 +18,9 @@ class EnglishBraille
     message_chars.each do |char|
       braille_letters << @braille[char]
     end
-    # require 'pry'; binding.pry
     braille_letters.first
   end
-
+  
   def line_break(collector, counter, braille_letters)
     loop do 
       collector[counter] = braille_letters.shift(40)
@@ -29,7 +28,7 @@ class EnglishBraille
       counter += 1
     end 
   end
-
+  
   def final_output(new_counter, counter, collector, final_message)
     until new_counter == counter
       new_counter += 1
