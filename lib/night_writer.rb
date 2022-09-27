@@ -1,5 +1,5 @@
-require './lib/braille_library'
-require './lib/braille_english'
+require './lib/english_library'
+require './lib/english_braille'
 
 file = File.open(ARGV[0], 'r') #permission to read
 #open said file and read it. 
