@@ -18,6 +18,7 @@ class EnglishBraille
     message_chars.each do |char|
       braille_letters << @braille[char]
     end
+    # require 'pry'; binding.pry
     braille_letters.first
   end
 

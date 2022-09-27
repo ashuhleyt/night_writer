@@ -14,7 +14,9 @@ RSpec.describe EnglishBraille do
     expect(@EnglishBraille.mastermind("ashley")).to eq("0..00.0.0.00\n..0.000..0.0\n..0...0...00\n")
   end
 
-  
+  it 'converts to individual braille characters' do 
+    expect(@EnglishBraille.convert_to_braille("a", [["0.", "..", ".."]])).to eq(["0.", "..", ".."])
+  end
 
   
 end

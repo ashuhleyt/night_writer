@@ -7,7 +7,7 @@ message = file.read
 
 new_file = File.open(ARGV[1], 'w') 
 
-converted_message = EnglishBraille.new.convert_to_braille(message) 
+converted_message = EnglishBraille.new.mastermind(message) 
 
 new_file.write(converted_message)
 puts "Created '#{ARGV[1]}' containing #{converted_message.length} characters."
