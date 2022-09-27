@@ -19,9 +19,11 @@ RSpec.describe EnglishBraille do
     expect(@EnglishBraille.convert_to_braille("sleep", [[".0", "0.", "0.", "0.", "0.", "0.", "0.", ".0", "..", "0.", ".0", "..", "00", "0.", "0."]])).to eq([".0", "0.", "0.", "0.", "0.", "0.", "0.", ".0", "..", "0.", ".0", "..", "00", "0.", "0."])
   end
 
-  # it 'returns final message in proper notation' do 
-  #   expect(@EnglishBraille.final_output(0, 0, {0=>[["0.", "..", ".."]]}, "0.")).to eq("0.\n")
-  # end
+  it 'creats a loop to cause a line break' do 
+    expect(@EnglishBraille.line_break({0=>[["0.", "..", ".."]]}, 0, [["0.", "..", ".."]])).to eq(nil)
+  end
 
-  
+  it 'returns final message in proper notation' do 
+    expect(@EnglishBraille.final_output(0, 0, {0=>[["0.", "..", ".."]],}, "0.")).to eq(nil)
+  end
 end

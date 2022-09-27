@@ -13,11 +13,9 @@ class BrailleEnglish
 
   def split_character(message)
     split_message = []
-    # require 'pry'; binding.pry
     message.split("\n").each do |x|
       split_message << x.scan(/../)
     end
-    # require 'pry'; binding.pry
     repeat = split_message.length / 3
     braille_characters(repeat, split_message)
   end
@@ -26,10 +24,10 @@ class BrailleEnglish
     collector = [] 
     x = 0
     y = 2
-    #until repeat == 0
+    until repeat == 0
     collector << split_message[x..y].transpose
-      #repeat -= 1
-    #end
+      repeat -= 1
+    end
     collector.flatten(1)
   end
 end
