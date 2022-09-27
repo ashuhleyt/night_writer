@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
 RSpec.describe EnglishBraille do 
   before(:each) do 
     @EnglishBraille = EnglishBraille.new
@@ -10,13 +9,21 @@ RSpec.describe EnglishBraille do
     expect(@EnglishBraille).to be_instance_of(EnglishBraille)
   end
 
-  it 'can format braille to correct size' do 
-    expect(@EnglishBraille.convert_string_to_braille("a")).to eq("0.\n..\n..\n")
-    expect(@EnglishBraille.convert_string_to_braille("s")).to eq(".0\n0.\n0.\n")
-    expect(@EnglishBraille.convert_string_to_braille("h")).to eq("0.\n00\n..\n")
-    expect(@EnglishBraille.convert_string_to_braille("l")).to eq("0.\n0.\n0.\n")
-    expect(@EnglishBraille.convert_string_to_braille("e")).to eq("0.\n.0\n..\n")
-    expect(@EnglishBraille.convert_string_to_braille("y")).to eq("00\n.0\n00\n")
-    expect(@EnglishBraille.convert_string_to_braille("ashley")).to eq("0..00.0.0.00\n..0.000..0.0\n..0...0...00\n")
+  it 'converts message to braille characters' do 
+    expect(@EnglishBraille.mastermind("a")).to eq("0.\n..\n..\n")
+    expect(@EnglishBraille.mastermind("ashley")).to eq("0..00.0.0.00\n..0.000..0.0\n..0...0...00\n")
+  end
+
+  it 'converts to individual braille characters' do 
+    expect(@EnglishBraille.convert_to_braille("a", [["0.", "..", ".."]])).to eq(["0.", "..", ".."])
+    expect(@EnglishBraille.convert_to_braille("sleep", [[".0", "0.", "0.", "0.", "0.", "0.", "0.", ".0", "..", "0.", ".0", "..", "00", "0.", "0."]])).to eq([".0", "0.", "0.", "0.", "0.", "0.", "0.", ".0", "..", "0.", ".0", "..", "00", "0.", "0."])
+  end
+
+  it 'creats a loop to cause a line break' do 
+    expect(@EnglishBraille.line_break({0=>[["0.", "..", ".."]]}, 0, [["0.", "..", ".."]])).to eq(nil)
+  end
+
+  it 'returns final message in proper notation' do 
+    expect(@EnglishBraille.final_output(0, 0, {0=>[["0.", "..", ".."]],}, "0.")).to eq(nil)
   end
 end

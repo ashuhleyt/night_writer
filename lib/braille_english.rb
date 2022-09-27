@@ -16,7 +16,18 @@ class BrailleEnglish
     message.split("\n").each do |x|
       split_message << x.scan(/../)
     end
-    split_message[0..2].transpose + split_message[3..5].transpose + split_message[6..8].transpose 
+    repeat = split_message.length / 3
+    braille_characters(repeat, split_message)
   end
-   
+
+  def braille_characters(repeat, split_message)
+    collector = [] 
+    x = 0
+    y = 2
+    until repeat == 0
+    collector << split_message[x..y].transpose
+      repeat -= 1
+    end
+    collector.flatten(1)
+  end
 end
