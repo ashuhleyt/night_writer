@@ -1,4 +1,4 @@
-module Library
+module EnglishLibrary
   attr_reader :braille
   
   def initialize

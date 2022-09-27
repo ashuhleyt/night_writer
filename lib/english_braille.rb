@@ -1,5 +1,5 @@
 class EnglishBraille
-  include Library 
+  include EnglishLibrary 
 
   def convert_string_to_braille(message)
     collector = {}
@@ -11,6 +11,7 @@ class EnglishBraille
     message_chars.each do |char|
       braille_letters << @braille[char]
     end
+
     loop do 
       collector[counter] = braille_letters.shift(40)
       break if braille_letters.count == 0
