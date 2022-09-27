@@ -1,5 +1,5 @@
 class EnglishBraille
-  include Library 
+  include EnglishLibrary 
 
   def convert_string_to_braille(message)
     collector = {}
