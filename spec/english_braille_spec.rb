@@ -9,18 +9,12 @@ RSpec.describe EnglishBraille do
     expect(@EnglishBraille).to be_instance_of(EnglishBraille)
   end
 
-  it 'can format braille to correct size' do 
-    expect(@EnglishBraille.convert_string_to_braille("a")).to eq([["0.", "..", ".."]])
-    expect(@EnglishBraille.convert_string_to_braille("s")).to eq([[".0", "0.", "0."]])
-    expect(@EnglishBraille.convert_string_to_braille("h")).to eq([["0.", "00", ".."]])
-    expect(@EnglishBraille.convert_string_to_braille("l")).to eq([["0.", "0.", "0."]])
-    expect(@EnglishBraille.convert_string_to_braille("e")).to eq([["0.", ".0", ".."]])
-    expect(@EnglishBraille.convert_string_to_braille("y")).to eq([["00", ".0", "00"]])
-    expect(@EnglishBraille.convert_string_to_braille("ashley")).to eq([["0.", "..", ".."], [".0", "0.", "0."], ["0.", "00", ".."], ["0.", "0.", "0."], ["0.", ".0", ".."], ["00", ".0", "00"]])
-  end
-  
   it 'converts message to braille characters' do 
-    expect(@EnglishBraille.convert_to_braille("a")).to eq([["0.", "..", ".."]])
+    expect(@EnglishBraille.mastermind("a")).to eq("0.\n..\n..\n")
+    expect(@EnglishBraille.mastermind("ashley")).to eq("0..00.0.0.00\n..0.000..0.0\n..0...0...00\n")
   end
+
+  
+
   
 end

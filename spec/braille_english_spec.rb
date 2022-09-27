@@ -19,6 +19,6 @@ RSpec.describe BrailleEnglish do
   end
 
   it 'can return english letters appropriately' do 
-    expect(@BrailleEnglish.braille_characters(repeat)).to eq("a")
+    expect(@BrailleEnglish.braille_characters(1, [["0."], [".."], [".."]] )).to eq([["0.", "..", ".."]])
   end
 end
