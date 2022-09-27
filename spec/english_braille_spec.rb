@@ -23,6 +23,7 @@ RSpec.describe EnglishBraille do
 
   it 'converts to individual braille characters' do 
     expect(@EnglishBraille.convert_to_braille("a", [["0.", "..", ".."]])).to eq(["0.", "..", ".."])
+    expect(@EnglishBraille.convert_to_braille("s", [[".0", "0.", "0."]])).to eq([".0", "0.", "0."])
     expect(@EnglishBraille.convert_to_braille("sleep", [[".0", "0.", "0.", "0.", "0.", "0.", "0.", ".0", "..", "0.", ".0", "..", "00", "0.", "0."]])).to eq([".0", "0.", "0.", "0.", "0.", "0.", "0.", ".0", "..", "0.", ".0", "..", "00", "0.", "0."])
   end
 
